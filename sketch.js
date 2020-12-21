@@ -23,20 +23,19 @@ function draw() {
   if( wall.x - bullet.x < wall.width/2 + bullet.width/2)
   {
    bullet.velocityX= 0;
-   var damage= 0.5 * bulletWeight * bulletSpeed * bulletSpeed / 
-   bullet.thickness * bullet.thickness * bullet.thickness;
+   var damage= 0.5 * weight * speed * speed / 
+   (thickness * thickness * thickness);
 
-   if(damage<10)
-   {
-    bullet.shapeColor= color("lightgreen")
-   }
    if(damage>10)
    {
-    wall.shapeColor= color("red")
+    wall.shapeColor= "green"
+   }
+   if(damage<10)
+   {
+    wall.shapeColor= "red"
    }
 
   }
-
 
   drawSprites();
 }
